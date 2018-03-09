@@ -15,7 +15,9 @@
 <tw-storydata name="Arcade Game 1" startnode="1" creator="Twine" creator-version="2.2.1" ifid="284BC1A9-5FA7-48D6-9EA6-C072EE240A47" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
 
 
+
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">
+
 
 
 </script><tw-passagedata pid="1" name="Untitled Passage" tags="" position="980,451" size="100,100">Welcome to my first arcade style game. If you would like to submit your score, follow the link at the end of the game. I will be displaying the high score and who has it on my website!
@@ -29,7 +31,8 @@
 (set: $score to 0)
 (set: $gold to 5)
 (set: $weaponbonus to 0)
-(set: $enemystrength to 1)</tw-passagedata><tw-passagedata pid="2" name="camp" tags="" position="980,339" size="100,100">Welcome to the camp. Your hp is $hp. Your score is $score and you have $gold gold. 
+(set: $enemystrength to 1)
+(set: $healthpotion to 0)</tw-passagedata><tw-passagedata pid="2" name="camp" tags="" position="980,339" size="100,100">Welcome to the camp. Your hp is $hp. Your score is $score and you have $gold gold. 
 (set: $maxhp to 5)
 [[Go adventuring!|adventuringlvl1]]
 
@@ -80,7 +83,7 @@ You hit the goblin and it stumbles back!
 You kill the goblin!
 (set: $score to $score + $streak)
 [[I am Victorious!|postfight]]
-]]</tw-passagedata><tw-passagedata pid="8" name="mattack1" tags="" position="655,194" size="100,100">(set: $attack to (random:(1,2,3)))
+]]</tw-passagedata><tw-passagedata pid="8" name="mattack1" tags="" position="669,192" size="100,100">(set: $attack to (random:(1,2,3)))
 (if: $attack is 1)[
 The goblin dodges your attack and attacks you back!
 
@@ -154,7 +157,7 @@ You block the attack!
 
 
 ]
-</tw-passagedata><tw-passagedata pid="11" name="duringfight1" tags="" position="694,64" size="100,100">(if: $goblinhp &gt; 0)[
+</tw-passagedata><tw-passagedata pid="11" name="duringfight1" tags="" position="693,66" size="100,100">(if: $goblinhp &gt; 0)[
 (set: $initiative to (random:(1,2,3,4)))
 (if: $initiative &lt; 4)[
 You attack the goblin!
@@ -191,8 +194,8 @@ You buy a health potion
 (else:)[
 You do not have enough money.
 
-[[Whoops|shop]]]</tw-passagedata><tw-passagedata pid="15" name="drinkhealthpot" tags="" position="481,63" size="100,100">You drink the health potion
-(set: $health to $maxhealth)
+[[Whoops|shop]]]</tw-passagedata><tw-passagedata pid="15" name="drinkhealthpot" tags="" position="480,64" size="100,100">You drink the health potion
+(set: $health to $maxhp)
 [[GLUG GLUG GLUG|duringfight1]]</tw-passagedata><tw-passagedata pid="16" name="precamp" tags="" position="1141,89" size="100,100">(set: $score to $score - 1)
 Your streak is now 0 and you have lost one score as you are going to camp. 
 
