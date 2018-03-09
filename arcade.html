@@ -188,10 +188,11 @@ You win! Your hp is $hp and you have $gold gold. Your streak is $streak. Continu
 [[Return to Camp (this will set your streak to 0)|precamp]]</tw-passagedata><tw-passagedata pid="13" name="end" tags="" position="653,491" size="100,100">You died. Your score is $score. If you want, you can submit it to this &lt;a href=&quot;https://goo.gl/forms/cIMldJc5DX285Fc42&quot;&gt;Google Form&lt;/a&gt;
 
 [[Reset|Untitled Passage]]</tw-passagedata><tw-passagedata pid="14" name="buyhealthpotion" tags="" position="1093,229" size="100,100">(if: $gold &gt; 24)[
+(set: $gold to $gold - 25)
 You buy a health potion
 (set: $healthpotion to $healthpotion + 1)
 [[Ok|shop]]
-(set: $gold to $gold - 25)
+
 ]
 (else:)[
 You do not have enough money.
