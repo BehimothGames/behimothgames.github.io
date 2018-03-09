@@ -190,7 +190,9 @@ You win! Your hp is $hp and you have $gold gold. Your streak is $streak. Continu
 [[Reset|Untitled Passage]]</tw-passagedata><tw-passagedata pid="14" name="buyhealthpotion" tags="" position="1093,229" size="100,100">(if: $gold &gt; 24)[
 You buy a health potion
 (set: $healthpotion to $healthpotion + 1)
-[[Ok|shop]]]
+[[Ok|shop]]
+(set: $gold to $gold - 25)
+]
 (else:)[
 You do not have enough money.
 
