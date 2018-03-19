@@ -31,8 +31,7 @@
 (set: $score to 0)
 (set: $gold to 5)
 (set: $weaponbonus to 0)
-(set: $enemystrength to 1)
-(set: $healthpotion to 0)</tw-passagedata><tw-passagedata pid="2" name="camp" tags="" position="980,339" size="100,100">Welcome to the camp. Your hp is $hp. Your score is $score and you have $gold gold. 
+(set: $enemystrength to 1)</tw-passagedata><tw-passagedata pid="2" name="camp" tags="" position="980,339" size="100,100">Welcome to the camp. Your hp is $hp. Your score is $score and you have $gold gold. 
 (set: $maxhp to 5)
 [[Go adventuring!|adventuringlvl1]]
 
@@ -83,7 +82,7 @@ You hit the goblin and it stumbles back!
 You kill the goblin!
 (set: $score to $score + $streak)
 [[I am Victorious!|postfight]]
-]]</tw-passagedata><tw-passagedata pid="8" name="mattack1" tags="" position="669,192" size="100,100">(set: $attack to (random:(1,2,3)))
+]]</tw-passagedata><tw-passagedata pid="8" name="mattack1" tags="" position="655,194" size="100,100">(set: $attack to (random:(1,2,3)))
 (if: $attack is 1)[
 The goblin dodges your attack and attacks you back!
 
@@ -157,7 +156,7 @@ You block the attack!
 
 
 ]
-</tw-passagedata><tw-passagedata pid="11" name="duringfight1" tags="" position="693,66" size="100,100">(if: $goblinhp &gt; 0)[
+</tw-passagedata><tw-passagedata pid="11" name="duringfight1" tags="" position="694,64" size="100,100">(if: $goblinhp &gt; 0)[
 (set: $initiative to (random:(1,2,3,4)))
 (if: $initiative &lt; 4)[
 You attack the goblin!
@@ -188,17 +187,15 @@ You win! Your hp is $hp and you have $gold gold. Your streak is $streak. Continu
 [[Return to Camp (this will set your streak to 0)|precamp]]</tw-passagedata><tw-passagedata pid="13" name="end" tags="" position="653,491" size="100,100">You died. Your score is $score. If you want, you can submit it to this &lt;a href=&quot;https://goo.gl/forms/cIMldJc5DX285Fc42&quot;&gt;Google Form&lt;/a&gt;
 
 [[Reset|Untitled Passage]]</tw-passagedata><tw-passagedata pid="14" name="buyhealthpotion" tags="" position="1093,229" size="100,100">(if: $gold &gt; 24)[
-(set: $gold to $gold - 25)
 You buy a health potion
 (set: $healthpotion to $healthpotion + 1)
-[[Ok|shop]]
-
-]
+[[Ok|shop]]]
 (else:)[
 You do not have enough money.
 
-[[Whoops|shop]]]</tw-passagedata><tw-passagedata pid="15" name="drinkhealthpot" tags="" position="480,64" size="100,100">You drink the health potion
-(set: $health to $maxhp)
+[[Whoops|shop]]]</tw-passagedata><tw-passagedata pid="15" name="drinkhealthpot" tags="" position="481,63" size="100,100">(set: $healthpotion to $healthpotion - 1)
+You drink the health potion
+(set: $health to $maxhealth)
 [[GLUG GLUG GLUG|duringfight1]]</tw-passagedata><tw-passagedata pid="16" name="precamp" tags="" position="1141,89" size="100,100">(set: $score to $score - 1)
 Your streak is now 0 and you have lost one score as you are going to camp. 
 
