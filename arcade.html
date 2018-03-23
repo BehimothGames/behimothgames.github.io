@@ -21,7 +21,7 @@ background: url("https://cdn.glitch.com/cac292cc-f521-40b0-876f-6f57d7adcaf2%2FD
 }
 
 tw-passage{
- color: black; 
+ color: white; 
     font-family: "Roboto Condensed", sans-serif;
   font-size:40px;
 }
@@ -48,8 +48,7 @@ tw-link{
 
 
 
-</script><tw-passagedata pid="1" name="Untitled Passage" tags="" position="980,451" size="100,100">
-Welcome to my first arcade style game. If you would like to submit your score, follow the link at the end of the game. I will be displaying the high score and who has it on my website!
+</script><tw-passagedata pid="1" name="Untitled Passage" tags="" position="980,451" size="100,100">Welcome to my first arcade style game. If you would like to submit your score, follow the link at the end of the game. I will be displaying the high score and who has it on my website!
 
 [[Cool!|camp]]
 
@@ -218,6 +217,7 @@ You win! Your hp is $hp and you have $gold gold. Your streak is $streak. Continu
 [[Reset|Untitled Passage]]</tw-passagedata><tw-passagedata pid="14" name="buyhealthpotion" tags="" position="1093,229" size="100,100">(if: $gold &gt; 24)[
 You buy a health potion
 (set: $healthpotion to $healthpotion + 1)
+(set: $gold to $gold - 25)
 [[Ok|shop]]]
 (else:)[
 You do not have enough money.
